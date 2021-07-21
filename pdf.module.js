@@ -1,9 +1,10 @@
 const router = require('express').Router();
 const generatepdfNotification = {};
 
-const fs = require("fs");
+const fs = require('fs');
 const path = require('path');
-const handlebars = require("handlebars");
+const handlebars = require('handlebars');
+const { time } = require('node:console');
 
 let puppeteer;
 let revisionInfo;
@@ -20,7 +21,8 @@ if (process.env.PORT) {
 		} catch (error) {
 			console.log(error)
 		}
-	})();
+	})
+
 } else {
 	puppeteer = require('puppeteer');
 }
@@ -155,7 +157,7 @@ router.get('/1', function (req, res) {
 	createPDF(req, res, 'notificationOfTradeTestDate.html');
 })
 
-router.post('/generatepdfNotification', function (req, res) {
+router.post('/pdfNotification', function (req, res) {
 	createPDF(req, res, 'notificationOfTradeTestDate.html');
 })
 router.post('/AppointSME', function (req, res) {
@@ -179,10 +181,19 @@ router.post('/7', function (req, res) {
 router.post('/Accreditation', function (req, res) {
 	createPDF(req, res, 'TechnicalAA.html');
 })
+router.post('/TradeTestResults', function (req, res) {
+	createPDF(req, res, 'TradeTestResults.html');
+})
+router.post('/TradeTestDate', function (req, res) {
+	createPDF(req, res, 'TradeTestDate.html');
+})
+router.post('/TradeTestFeedbackReport', function (req, res) {
+	createPDF(req, res, 'TradeTestFeedbackReport.html');
+})
 
 
 {
-	const generatepdfNotification = {
+	pdfNotification = {
 		ref_no: Number,
 		trade_test_centre: String,
 		trade: String,
@@ -203,7 +214,7 @@ router.post('/Accreditation', function (req, res) {
 			physical_address: String,
 			contact_person: String,
 			contact_no: Number,
-			email: String
+			email: String,
 		},
 
 		Registration = {
@@ -236,24 +247,81 @@ router.post('/Accreditation', function (req, res) {
 		},
 
 		Approval = {
-			trade_test_centre_name : String,
-			centre_num : Number,
-			physical_address : String,
-			OFOCode : Number,
-			specialisation : String,
-			trade_title : String,
-			start_date : Date,
-			end_date : Date,
+			trade_test_centre_name: String,
+			centre_num: Number,
+			physical_address: String,
+			OFOCode: Number,
+			specialisation: String,
+			trade_title: String,
+			start_date: Date,
+			end_date: Date,
 		},
 
 		Accreditation = {
-			trade_test_centre_name : String,
-			physical_address : String,
-			contact_person : String,
-			contact_details : Number,
-			email : String,
-		}
-		}
+			trade_test_centre_name: String,
+			physical_address: String,
+			contact_person: String,
+			contact_details: Number,
+			email: String,
+		},
+		TradeTestResults = {
+			candidate_name: String,
+			trade_name: String,
+			speciliasation: String,
+			OFOCode: String,
+			saqa_id: String,
+			id_num: String,
+			contact_num: Number,
+			trade_test_centre: String,
+			trade_test_serial_number: String,
+			test_date: Date,
+			attempt_no: Number,
+			results: String,
+			assessor_name: String,
+			moderator_name: String,
+			reg_no: String,
+			id_num: String,
+			signature: String,
+			date: Date,
+			centre_manager: String,
+			namb_verifier: String,
+		},
 
+		TradeTestDate = {
+			serial_no: Number,
+			candidate_name: String,
+			id_num: Number,
+			date: Date,
+			trade_test_attempt_no: Number,
+			trade_test_centre: String,
+			physical_address: String,
+			contact_num: String,
+			trade: String,
+			speciliasation: String,
+			OFOCode: String,
+			trade_test_date: Date,
+			time: Date
+		},
+
+		TradeTestFeedbackReport = {
+			candidate_name: String,
+			trade_name: String,
+			speciliasation: String,
+			OFOCode: String,
+			saqa_id: String,
+			id_num: Number,
+			contact_num: Number,
+			trade_test_centre: String,
+			trade_test_serial_number: String,
+			test_date: Date,
+			attempt_no: Number,
+			results: String,
+			assessor_name: String,
+			reg_no: Number,
+			signature: String,
+			date: Date,
+
+		}
+}
 
 module.exports = router;

@@ -89,8 +89,6 @@
             border-bottom: 1px solid black;
         }
 
-
-
         section .candidate {
             display: flex;
             flex-direction: column;
@@ -179,6 +177,28 @@
             border-bottom: 1px solid black;
         }
 
+        .parent {
+            width: 40%;
+        }
+
+        .parent p:first-of-type {
+            margin: 1.5em 0px 1.5em 0px
+        }
+
+        .child {
+            margin: 1.5em 0px 0px 5%;
+        }
+
+
+        .dec {
+
+            margin: 1.5em 0px 0px 15%;
+        }
+
+        .tools {
+            width: 95%;
+        }
+
         footer {
             margin-top: 2rem;
         }
@@ -193,28 +213,36 @@
             font-size: 0.6rem;
         }
 
-        .SIG{
-            width: 100%; margin: 0px 30px 0px 30px;
+        .SIG {
+            width: 100%;
+            margin: 0px 30px 0px 30px;
         }
 
         .break {
             width: 10em;
-            border: 1px  solid black;
+            border: 1px solid black;
             margin-left: 0;
         }
 
         .sign-field {
-            float: left; width: 50%;
+            float: left;
+            width: 50%;
             text-align: left;
         }
 
-        .para2{
+        .para2 {
             margin-top: 2em;
         }
 
         #sign {
             margin-top: 3.5em;
         }
+
+        #d {
+            height: auto;
+            width: 50%;
+        }
+
 
         .address {
             font-size: 0.7rem;
@@ -224,136 +252,128 @@
 
 <body>
     <div class="wrapper">
-        <div class="logo">
-            {{{logo}}}
-           
-            <div class="dept">
-                <h4>higher education <br>& training</h4>
-                <p>Department:</p>
-                <p>Higher Education and Training</p>
-                <b>REPUBLIC OF SOUTH AFRICA</b>
-            </div>
-        </div>
-        <p class="address">Private Bag X393, Pretoria, 0001, Tel (012) 312 5555, Fax (012) 323 5618</p>
-
-        <br>
-
-        <p class="address">Private Bag X9192, Cape Town, 8000, Tel (021) 465 5513, Fax: (021) 465 7956</p>
-
-        <br>
-
-        <p class="address">Website: www.dhet.gov.za</p>
-
-
-        <br>
-
-
-        <br>
         <section>
-            <div class="dates">
-                <div class="enquires">
-                    <p>Enquires: </p><span>Ms. Heilene Steenkamp</span>
-                </div>
-                <div class="tel">
-                    <p>Tel No: </p><span>011 206 1124/6</span>
-                </div>
-                <div class="email">
-                    <p>Email: </p><span>Steenkamp.h@dhet.gov.za</span>
-                </div>
+            <h1>confirmation of trade test date</h1>
+            <br>
+
+
+            <br>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>Serial No</td>
+                        <td>{{serial_no}}</td>
+                    </tr>
+                    <tr>
+                        <td>Candidate Name as per ID document</td>
+                        <td>{{candidate_name}}</td>
+                    </tr>
+                    <tr>
+                        <td>Id Number</td>
+                        <td>{{id_num}}</td>
+                    </tr>
+                    <tr>
+                        <td>Date of First Trade Test Attempt</td>
+                        <td>{{date}}</td>
+                    </tr>
+                    <tr>
+                        <td>Trade test Attempt No</td>
+                        <td>{{trade_test_attempt_no}}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <br>
+
+
+            <br>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>Trade Test Centre</td>
+                        <td>{{trade_test_centre}}</td>
+                    </tr>
+                    <tr>
+                        <td>Physical Address</td>
+                        <td>{{physical_address}}</td>
+                    </tr>
+                    <tr>
+                        <td>Contact Number</td>
+                        <td>{{contact_num}}</td>
+                    </tr>
+                    <tr>
+                        <td>Trade</td>
+                        <td>{{trade}}</td>
+                    </tr>
+                    <tr>
+                        <td>Specialisation</td>
+                        <td>{{specialisattion}}</td>
+                    </tr>
+                    <tr>
+                        <td>OFOCode</td>
+                        <td>{{OfoCode}}</td>
+                    </tr>
+                    <tr>
+                        <td>Trade Test Date</td>
+                        <td>{{trade_test_date}}</td>
+                    </tr>
+                    <tr>
+                        <td>Time</td>
+                        <td>{{time}}</td>
+                    </tr>
+                <tbody>
+            </table>
+            <br>
+
+
+            <br>
+
+            <div class="parent">
+                <p><b>Notes:</b></p>
+                <ol>
+                    <div class="child">
+                        <li>Please quote your serial number in all communication between yourself and the trade test
+                            centre
+                        </li>
+                    </div>
+                    <div class="child">
+                        <li>Please bring this letter with you on the day of the trade test to the relevant Workshop
+                        </li>
+                    </div>
+                    <div class="child">
+                        <li>
+                            Tools:
+                        </li>
+                        <ul class="tools">
+                            <li>Trade Test Candidate may bring along tools on the day of the trade test.</li>
+                            <li>The tools must be declared to the assessor and approved by the assessor for use during
+                                the
+                                trade
+                                test.
+                            </li>
+                            <li>Candidates in the metal machining related trades may bring along the relevant cutting
+                                tools.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="child">
+                        <li>Candidates must wear the relevant Personal Productive Clothing(PPC)as required for each
+                            trade.
+                        </li>
+                    </div>
+                    <div class="child">
+                        <li><b>Candidate will be disqualified from the trade test if they arrive ONE hour
+                                late after
+                                commencement of
+                                the trade test.
+                            </b></li>
+                    </div>
+
+                </ol>
             </div>
 
-            <br>
-
-
-
-            <br>
-
-            <p><b>ID:</b></p>
-
-            <br>
-
-            <p><b>Re: Registration as a Trade Assessment Practitioner.</b></p>
-
-            <br>
-
-            <p>This serves to inform you that your application for registration as a Trade Assessment Practitioner was
-                considered by
-                NAMB and herewith the following feedback is provided.</p>
-
-            <br>
-
-
-            <br>
-
-            <div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Registration approved</th>
-                            <th>Yes X</th>
-                            <th>No</th>
-                            <th>Registration Type</th>
-                            <th>Assessor X</th>
-                            <th>Moderator X</th>
-
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td rowspan="1" colspan="4">Registration Number</td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-
-                        <tr>
-                            <td rowspan="1" colspan="2">Registration Date</td>
-                            <td>{{reg_dateF}}</td>
-                            <td>{{reg_dateT}}</td>
-                            <td>{{reg_dateA}}</td>
-                            <td>{{reg_dateM}}</td>
-                        </tr>
-                        <tr>
-                            <td rowspan="1" colspan="1">Centre Name</td>
-                            <td colspan="5"></td>
-                        </tr>
-                        <tr>
-                            <td rowspan="1" colspan="1">OFOCode</td>
-                            <td colspan="2">{{trade_title}}</td>
-                            <td colspan="3">{{specialisation}}</td>
-
-                        </tr>
-
-                        <tr>
-                            <td rowspan="1" colspan="1">Accreditation Auditor</td>
-                            <td colspan="2"></td>
-                            <td colspan="3"></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
         </section>
-
-        <footer>
-
-            <div class="signature">
-                <span></span>
-                <p><b>Mr DK Mabusela</b></p>
-                <p><b>Chief Director: National Artisan Development</b></p>
-            </div>
-
-            <!-- <div class="sign-field" id="date">
-                <p> 
-                 
-                    <hr class="break">
-                    date
-                </p>
-                 <p class="para2"> 
-                    23 March 2021  
-                    <hr class="break">
-                    DATE
-                </p> -->
-            </div> 
-        </footer>
     </div>
 </body>
 
